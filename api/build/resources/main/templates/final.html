@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <base href="/" />
+    <link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/resources/css/app.css' />
+    <script src="/webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <title>title</title>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="navbar-fixed-bottom"></div>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false"
+                    data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">ISW</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="starter-template">
+        <h1>Robot calibration correctness test tool.</h1>
+        <p th:text="'Measurement points: ' + ${index.id}" />
+        <p th:text="'content: ' + ${index.content}" />
+            <h1>Result</h1>
+            <ul>
+                <th:block th:object="${index}">
+                    <li th:each="item : *{intArray}" th:text="${item}">Item description here...</li>
+                </th:block>
+            </ul>
+<tr>
+    <th:block th:object="${index}">
+        <td th:each="item : *{intArray}" th:text="${item}">Item description here...</td>
+    </th:block>
+</tr>
+
+
+        <!--
+-->
+
+        <!--
+        <table>
+            <tr>
+                <th>Measurement</th>
+            </tr>
+            <tr th:each="item : *{intArray}">
+                <td th:text="${item}">Onions</td>
+            </tr>
+        </table>
+
+        <p th:each="item : ${intArray}"
+           th:text="${intArray.index}">A Smoke Test</p>
+-->
+        <a href="/">Submit another message</a>
+    </div>
+</div>
+<footer class="footer">
+    <div class="navbar-fixed-bottom" id="footer">
+        <div class="container">
+            <p class="footer-text">Institut für Steuerungstechnik der Werkzeugmaschinen und Fertigungseinrichtungen</p>
+        </div>
+    </div>
+
+</footer>
+</body>
+</html>
